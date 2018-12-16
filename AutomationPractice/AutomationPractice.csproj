@@ -79,6 +79,8 @@
     <Compile Include="Pages\AuthenticationPage.cs" />
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\MyAccount.cs" />
+    <Compile Include="Pages\MyWishlistPage.cs" />
+    <Compile Include="Pages\SignUpPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\MyAccountSteps.cs" />
   </ItemGroup>

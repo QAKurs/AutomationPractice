@@ -8,19 +8,17 @@ using System.Threading.Tasks;
 
 namespace AutomationPractice.Pages
 {
-    class MyAccount
+    class MyWishlistPage
     {
         readonly IWebDriver driver;
 
-        public By logOut = By.ClassName("logout");
-        public By wishlist = By.ClassName("lnk_wishlist");
-        //public By accFullName = By.ClassName("account");
+        public By newWish = By.Id("form_wishlist");
 
-        public MyAccount(IWebDriver driver)
+        public MyWishlistPage(IWebDriver driver)
         {
             this.driver = driver;
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.Id("my-account")));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.Id("module-blockwishlist-mywishlist")));
         }
     }
 }

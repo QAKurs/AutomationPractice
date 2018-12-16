@@ -11,6 +11,7 @@ namespace AutomationPractice.Helpers
     public class Utilities
     {
         readonly IWebDriver driver;
+        private static readonly Random RandomName = new Random();
 
         public Utilities(IWebDriver driver)
         {
@@ -31,8 +32,35 @@ namespace AutomationPractice.Helpers
 
         public bool ElementDisplayed(By selector)
         {
-            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(selector)).Displayed;
+        }
+
+        public string GenerateRandomEmail()
+        {
+            return string.Format("email{0}@mailinator.com", RandomName.Next(100000, 1000000));
+        }
+
+        public void DropdownSelect(By select, string option)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(select));
+            var dropdown = driver.FindElement(select);
+            var selectElement = new SelectElement(dropdown);
+            selectElement.SelectByText(option);
+        }
+
+        public void DropdownSelect(IWebElement select, string option)
+        {
+            var selectElement = new SelectElement(select);
+            selectElement.SelectByText(option);
+        }
+
+        public IWebElement TextPresentInElement(string text)
+        {
+            By textElement = By.XPath("//*[contains(text(),'" + text + "')]");
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(textElement));
         }
     }
 }
