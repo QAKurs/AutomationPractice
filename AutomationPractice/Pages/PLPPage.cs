@@ -8,18 +8,17 @@ using System.Threading.Tasks;
 
 namespace AutomationPractice.Pages
 {
-    class HomePage
+    class PLPPage
     {
         readonly IWebDriver driver;
 
-        public By signIn = By.ClassName("login");
-        public By dresses = By.CssSelector(".sf-menu [title='Dresses']");
+        public By firstProduct = By.CssSelector(".product_img_link .replace-2x");
 
-        public HomePage(IWebDriver driver)
+        public PLPPage(IWebDriver driver)
         {
             this.driver = driver;
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.Id("index")));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.CssSelector(".container .breadcrumb [title='Women']")));
         }
     }
 }

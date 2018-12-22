@@ -62,5 +62,16 @@ namespace AutomationPractice.Helpers
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
             return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(textElement));
         }
+
+        public IList<IWebElement> ReturnCategoryList(string catName)
+        {
+            IList<IWebElement> category = driver.FindElements(By.CssSelector(".sf-menu [title='" + catName + "']"));
+            return category;
+        }
+
+        public string ReturnTextFromElement(By selector)
+        {
+            return driver.FindElement(selector).GetAttribute("textContent");
+        }
     }
 }
