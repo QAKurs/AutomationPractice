@@ -14,6 +14,9 @@ namespace AutomationPractice.Pages
 
         public By signIn = By.ClassName("login");
         public By dresses = By.CssSelector(".sf-menu [title='Dresses']");
+        public By searchFld = By.Id("search_query_top");
+        public By searchBtn = By.ClassName("button-search");
+        public By contactUs = By.Id("contact-link");
 
         public HomePage(IWebDriver driver)
         {

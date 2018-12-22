@@ -50,12 +50,6 @@ namespace AutomationPractice.Helpers
             selectElement.SelectByText(option);
         }
 
-        public void DropdownSelect(IWebElement select, string option)
-        {
-            var selectElement = new SelectElement(select);
-            selectElement.SelectByText(option);
-        }
-
         public IWebElement TextPresentInElement(string text)
         {
             By textElement = By.XPath("//*[contains(text(),'" + text + "')]");

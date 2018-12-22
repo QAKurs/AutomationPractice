@@ -1,7 +1,7 @@
 ﻿Feature: PDP
-	In order to avoid silly mistakes
-	As a math idiot
-	I want to be told the sum of two numbers
+	In order to buy products
+	As a user
+	I want to be able to interacte with product details
 
 @Cart
 Scenario: User can add product to cart

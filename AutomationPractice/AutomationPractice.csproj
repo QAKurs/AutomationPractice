@@ -68,6 +68,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\Contact.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Contact.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\MyAccount.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -78,24 +83,37 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PDP.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Search.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Search.feature</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\Base.cs" />
     <Compile Include="Helpers\TestConstants.cs" />
     <Compile Include="Helpers\Utilities.cs" />
     <Compile Include="Pages\AuthenticationPage.cs" />
     <Compile Include="Pages\CartOverlayPage.cs" />
+    <Compile Include="Pages\ContactUsPage.cs" />
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\MyAccount.cs" />
     <Compile Include="Pages\MyWishlistPage.cs" />
     <Compile Include="Pages\PDPPage.cs" />
     <Compile Include="Pages\PLPPage.cs" />
+    <Compile Include="Pages\SearchResultsPage.cs" />
     <Compile Include="Pages\ShoppingCartPage.cs" />
     <Compile Include="Pages\SignUpPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Steps\ContactSteps.cs" />
     <Compile Include="Steps\MyAccountSteps.cs" />
     <Compile Include="Steps\PDPSteps.cs" />
+    <Compile Include="Steps\SearchSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Features\Contact.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Contact.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\MyAccount.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MyAccount.feature.cs</LastGenOutput>
@@ -103,6 +121,10 @@
     <None Include="Features\PDP.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PDP.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Search.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Search.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
