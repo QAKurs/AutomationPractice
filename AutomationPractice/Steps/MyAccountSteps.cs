@@ -72,6 +72,15 @@ namespace AutomationPractice.Steps
             ut.ClickOnElement(ap.signInBtn);
         }
 
+        [Given(@"user is logged in")]
+        public void GivenUserIsLoggedIn()
+        {
+            GivenUserOpensSignInPage();
+            GivenEntersCorrectCredentials();
+
+        }
+
+
         [When(@"user opens my wishlist")]
         public void WhenUserOpensMyWishlist()
         {

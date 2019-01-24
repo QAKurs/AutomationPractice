@@ -9,10 +9,12 @@ namespace AutomationPractice.Steps
     [Binding]
     public class ContactSteps : Base
     {
+        Utilities ut = new Utilities(Driver);
+
         [Given(@"user opens contact us page")]
         public void GivenUserOpensContactUsPage()
         {
-            Utilities ut = new Utilities(Driver);
+            //Utilities ut = new Utilities(Driver);
             HomePage hp = new HomePage(Driver);
             ut.ClickOnElement(hp.contactUs);
         }
