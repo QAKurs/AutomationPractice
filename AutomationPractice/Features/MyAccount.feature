@@ -14,7 +14,7 @@ Scenario: User can log in
 Scenario: User can open wishlist page
 	Given user opens sign in page
 	And enters correct credentials
-	Given user submits the login form
+	And user submits the login form
 	When user opens my wishlist
 	Then user can add new wishlist
 

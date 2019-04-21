@@ -17,7 +17,7 @@ namespace AutomationPractice.Steps
             ut.EnterTextInElement(hp.searchFld, term);
         }
         
-        [When(@"user submits the search")]
+        [StepDefinition(@"user submits the search")]
         public void WhenUserSubmitsTheSearch()
         {
             Utilities ut = new Utilities(Driver);

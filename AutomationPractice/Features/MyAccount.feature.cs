@@ -99,7 +99,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 16
  testRunner.And("enters correct credentials", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
- testRunner.Given("user submits the login form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.And("user submits the login form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
  testRunner.When("user opens my wishlist", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 19
@@ -136,3 +136,4 @@ this.ScenarioSetup(scenarioInfo);
 }
 #pragma warning restore
 #endregion
+

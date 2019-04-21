@@ -13,6 +13,7 @@ namespace AutomationPractice.Pages
         readonly IWebDriver driver;
 
         public By searchTerm = By.ClassName("lighter");
+        public By firstProduct = By.CssSelector(".product_img_link .replace-2x");
 
         public SearchResultsPage(IWebDriver driver)
         {

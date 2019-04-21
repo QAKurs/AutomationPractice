@@ -9,10 +9,11 @@ namespace AutomationPractice.Steps
     [Binding]
     public class MyAccountSteps : Base
     {
+        Utilities ut = new Utilities(Driver);
+
         [Given(@"user opens sign in page")]
         public void GivenUserOpensSignInPage()
         {
-            Utilities ut = new Utilities(Driver);
             HomePage hp = new HomePage(Driver);
             ut.ClickOnElement(hp.signIn);
         }
@@ -20,7 +21,6 @@ namespace AutomationPractice.Steps
         [Given(@"enters correct credentials")]
         public void GivenEntersCorrectCredentials()
         {
-            Utilities ut = new Utilities(Driver);
             AuthenticationPage ap = new AuthenticationPage(Driver);
             ut.EnterTextInElement(ap.username, TestConstants.Username);
             ut.EnterTextInElement(ap.password, TestConstants.Password);
@@ -29,17 +29,16 @@ namespace AutomationPractice.Steps
         [Given(@"initiates a flow for creating an account")]
         public void GivenInitiatesAFlowForCreatingAnAccount()
         {
-            Utilities ut = new Utilities(Driver);
             AuthenticationPage ap = new AuthenticationPage(Driver);
             string email = ut.GenerateRandomEmail();
             ut.EnterTextInElement(ap.email, email);
             ut.ClickOnElement(ap.createAcc);
+
         }
 
         [Given(@"user enters all required personal details")]
         public void GivenUserEntersAllRequiredPersonalDetails()
         {
-            Utilities ut = new Utilities(Driver);
             SignUpPage sup = new SignUpPage(Driver);
             ut.EnterTextInElement(sup.firstName, TestConstants.FirstName);
             ut.EnterTextInElement(sup.lastName, TestConstants.LastName);
@@ -59,7 +58,6 @@ namespace AutomationPractice.Steps
         [When(@"submits the sign up form")]
         public void WhenSubmitsTheSignUpForm()
         {
-            Utilities ut = new Utilities(Driver);
             SignUpPage sup = new SignUpPage(Driver);
             ut.ClickOnElement(sup.registerBtn);
         }
@@ -67,7 +65,6 @@ namespace AutomationPractice.Steps
         [StepDefinition(@"user submits the login form")]
         public void WhenUserSubmitsTheLoginForm()
         {
-            Utilities ut = new Utilities(Driver);
             AuthenticationPage ap = new AuthenticationPage(Driver);
             ut.ClickOnElement(ap.signInBtn);
         }
@@ -77,14 +74,12 @@ namespace AutomationPractice.Steps
         {
             GivenUserOpensSignInPage();
             GivenEntersCorrectCredentials();
-
         }
 
 
         [When(@"user opens my wishlist")]
         public void WhenUserOpensMyWishlist()
         {
-            Utilities ut = new Utilities(Driver);
             MyAccount ma = new MyAccount(Driver);
             ut.ClickOnElement(ma.wishlist);
         }
@@ -92,7 +87,6 @@ namespace AutomationPractice.Steps
         [Then(@"user will be logged in")]
         public void ThenUserWillBeLoggedIn()
         {
-            Utilities ut = new Utilities(Driver);
             MyAccount ma = new MyAccount(Driver);
             Assert.True(ut.ElementDisplayed(ma.logOut), "User is not logged in");
         }
@@ -100,7 +94,6 @@ namespace AutomationPractice.Steps
         [Then(@"user can add new wishlist")]
         public void ThenUserCanAddNewWishlist()
         {
-            Utilities ut = new Utilities(Driver);
             MyWishlistPage mwp = new MyWishlistPage(Driver);
             Assert.True(ut.ElementDisplayed(mwp.newWish), "Form for adding new wishlist is not present");
         }
@@ -108,7 +101,6 @@ namespace AutomationPractice.Steps
         [Then(@"user's full name is displayed")]
         public void ThenUserSFullNameIsDisplayed()
         {
-            Utilities ut = new Utilities(Driver);
             string fullName = ScenarioContext.Current.Get<string>(TestConstants.FullName);
             Assert.True(ut.TextPresentInElement(fullName).Displayed, "User's full name is not displayed");
         }
